@@ -1,3 +1,4 @@
+/* Main styles */
 :root {
     --primary-color: #0078d4;
     --text-color: #333;
@@ -12,8 +13,11 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Header and navigation */
 header {
     background-color: var(--background-color);
     border-bottom: 1px solid var(--border-color);
@@ -21,6 +25,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .header-content {
@@ -134,9 +139,8 @@ nav a:hover::after {
     display: block;
 }
 
+/* Main content */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem 20px;
 }
 
@@ -168,6 +172,7 @@ main {
     border-radius: 6px;
 }
 
+/* Footer */
 footer {
     background-color: #f6f8fa;
     border-top: 1px solid var(--border-color);
@@ -186,12 +191,40 @@ footer {
     margin-top: 1rem;
 }
 
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
 /* Code blocks */
 pre {
     background: #f6f8fa;
     padding: 1rem;
     border-radius: 6px;
     overflow-x: auto;
+    margin-bottom: 1.5rem;
 }
 
 code {
@@ -202,6 +235,7 @@ code {
 /* Lists */
 ul, ol {
     padding-left: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 li {

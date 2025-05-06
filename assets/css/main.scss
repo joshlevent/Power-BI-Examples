@@ -2,10 +2,8 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+/* Variables */
 $max-content-width: 1200px;
 
-// Import base theme styles
-@import "al-folio";
-
-// Import our custom styles
-@import "custom";
+/* Our custom styles */
+@forward "custom";

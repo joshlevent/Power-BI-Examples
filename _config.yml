@@ -5,12 +5,8 @@ url: "https://joshlevent.github.io"
 
 # Build settings
 markdown: kramdown
-remote_theme: alshedivat/al-folio@v0.7.0
-sass:
-  sass_dir: _sass
-  style: compressed
+theme: minima
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
@@ -26,6 +22,8 @@ exclude:
   - "*.pbix.temp"
   - "*.pbix.backup"
   - "Add Sunday Values to Monday/"
+  - _sass
+  - assets/css/main.scss
 
 # Collections
 collections:
@@ -48,11 +46,6 @@ defaults:
 locale: "en-US"
 search: true
 search_full_content: true
-
-# UI
-navbar_fixed: true
-footer_fixed: false
-dark_mode: false
 
 # Author
 author:
