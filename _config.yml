@@ -21,20 +21,11 @@ exclude:
   - "*.pbix"
   - "*.pbix.temp"
   - "*.pbix.backup"
-
-# Collections
-collections:
-  examples:
-    output: true
-    permalink: /examples/:path/
+  - index.md
+  - _examples
 
 # Default front matter
 defaults:
-  - scope:
-      path: ""
-      type: "examples"
-    values:
-      layout: "example"
   - scope:
       path: ""
     values:
