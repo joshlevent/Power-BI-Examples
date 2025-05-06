@@ -6,6 +6,9 @@ url: "https://joshlevent.github.io"
 # Build settings
 markdown: kramdown
 remote_theme: alshedivat/al-folio@v0.7.0
+sass:
+  sass_dir: _sass
+  style: compressed
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
