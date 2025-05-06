@@ -18,9 +18,9 @@ exclude:
   - vendor
   - .gitignore
   - LICENSE
-  - *.pbix
-  - *.pbix.temp
-  - *.pbix.backup
+  - "*.pbix"
+  - "*.pbix.temp"
+  - "*.pbix.backup"
 
 # Collections
 collections:
