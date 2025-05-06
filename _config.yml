@@ -1,0 +1,41 @@
+title: Power BI Examples
+description: A collection of practical Power BI examples and solutions to common data analysis challenges
+baseurl: "/Power-BI-Examples"
+url: "https://joshlevent.github.io"
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - LICENSE
+  - *.pbix
+  - *.pbix.temp
+  - *.pbix.backup
+
+# Collections
+collections:
+  examples:
+    output: true
+    permalink: /examples/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "examples"
+    values:
+      layout: "example"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
