@@ -1,6 +1,7 @@
 ---
 layout: home
-title: Power BI Examples
+title: Home
+nav_order: 1
 ---
 
 # Power BI Examples
@@ -18,8 +19,8 @@ This repository contains various Power BI examples that demonstrate different te
 3. Review the measures, calculated columns, and data model structure
 4. Modify the examples to fit your specific needs
 
-[View Examples](/examples/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[GitHub Repository](https://github.com/joshlevent/Power-BI-Examples){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Examples]({% link examples/index.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHub Repository](https://github.com/joshlevent/Power-BI-Examples){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ## Contributing
 
