@@ -9,10 +9,29 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/examples' | relative_url }}">Examples</a>
-        </nav>
+        <div class="header-content">
+            <div class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="{{ '/examples/' | relative_url }}" class="dropdown-toggle">Examples</a>
+                        <ul class="dropdown-menu">
+                            {% assign example_dirs = site.pages | where_exp: "item", "item.path contains 'examples/'" | where_exp: "item", "item.name == 'index.md'" | sort: "title" %}
+                            {% for example in example_dirs %}
+                            <li><a href="{{ example.url | relative_url }}">{{ example.title }}</a></li>
+                            {% endfor %}
+                            {% if example_dirs.size == 0 %}
+                            <li><a href="{{ '/Add Sunday Values to Monday/' | relative_url }}">Add Sunday Values to Monday</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/joshlevent/Power-BI-Examples" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -20,7 +39,32 @@
     </main>
 
     <footer>
-        <p>© {{ site.time | date: '%Y' }} {{ site.title }}. Licensed under <a href="{{ '/LICENSE' | relative_url }}">MIT License</a>.</p>
+        <div class="footer-content">
+            <p>© {{ site.time | date: '%Y' }} {{ site.title }}. Licensed under <a href="{{ '/LICENSE' | relative_url }}">MIT License</a>.</p>
+            <p class="github-link">
+                <a href="https://github.com/joshlevent/Power-BI-Examples" target="_blank" rel="noopener">
+                    View on GitHub
+                </a>
+            </p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle dropdowns on mobile
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    // Only for mobile devices
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parent = this.parentNode;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

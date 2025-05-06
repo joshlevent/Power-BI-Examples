@@ -5,8 +5,9 @@ url: "https://joshlevent.github.io"
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+remote_theme: alshedivat/al-folio@v0.7.0
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
@@ -21,3 +22,38 @@ exclude:
   - "*.pbix"
   - "*.pbix.temp"
   - "*.pbix.backup"
+  - "Add Sunday Values to Monday/"
+
+# Collections
+collections:
+  examples:
+    output: true
+    permalink: /examples/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: "examples/*"
+    values:
+      layout: "example"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Site settings
+locale: "en-US"
+search: true
+search_full_content: true
+
+# UI
+navbar_fixed: true
+footer_fixed: false
+dark_mode: false
+
+# Author
+author:
+  name: Josh Levent
+  email: josh@joshlevent.com
+  url: https://joshlevent.com
+  github: joshlevent

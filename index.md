@@ -1,4 +1,6 @@
 ---
+layout: home
+title: Power BI Examples
 ---
 
 # Power BI Examples
@@ -9,13 +11,6 @@ A collection of practical Power BI examples and solutions to common data analysi
 
 This repository contains various Power BI examples that demonstrate different techniques, best practices, and solutions to common problems in data analysis and visualization.
 
-## Examples
-
-### Add Sunday Values to Monday
-- **File**: `AddSundayValuesToMondayExample.pbix`
-- **Description**: Example showing how to add Sunday's values to Monday's data in Power BI
-- **Location**: [Add Sunday Values to Monday/](Add%20Sunday%20Values%20to%20Monday/)
-
 ## How to Use These Examples
 
 1. Clone this repository
@@ -23,10 +18,13 @@ This repository contains various Power BI examples that demonstrate different te
 3. Review the measures, calculated columns, and data model structure
 4. Modify the examples to fit your specific needs
 
+[View Examples](/examples/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHub Repository](https://github.com/joshlevent/Power-BI-Examples){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
