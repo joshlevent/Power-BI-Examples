@@ -5,10 +5,11 @@ url: "https://joshlevent.github.io"
 
 # Build settings
 markdown: kramdown
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.7.0
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Theme settings
 color_scheme: dark
