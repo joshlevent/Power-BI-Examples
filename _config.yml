@@ -5,11 +5,10 @@ url: "https://joshlevent.github.io"
 
 # Build settings
 markdown: kramdown
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-remote-theme
 
 # Theme settings
 color_scheme: dark
@@ -26,7 +25,6 @@ nav_external_links:
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: true
 search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
@@ -58,11 +56,8 @@ exclude:
   - node_modules
   - vendor
   - .gitignore
-  - LICENSE
-  - "*.pbix"
   - "*.pbix.temp"
   - "*.pbix.backup"
-  - "Add Sunday Values to Monday/"
   - _sass
   - assets/css/main.scss
 
@@ -91,6 +86,8 @@ defaults:
       layout: "page"
       title: "Examples"
       nav_order: 2
+      has_children: true
+      has_toc: false
 
 # Site settings
 locale: "en-US"

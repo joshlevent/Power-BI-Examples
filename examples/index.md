@@ -8,7 +8,7 @@ layout: page
 
 # Power BI Examples
 
-{% assign example_dirs = site.pages | where_exp: "item", "item.path contains 'examples/'" | where_exp: "item", "item.name == 'index.md'" | where_exp: "item", "item.url != page.url" | sort: "title" %}
+{% assign example_dirs = site.pages | where_exp: "item", "item.path contains 'examples/'" | where_exp: "item", "item.path != 'examples/index.md'" | where_exp: "item", "item.name == 'index.md'" | sort: "title" %}
 {% if example_dirs.size > 0 %}
 <div class="examples-grid">
   {% for example in example_dirs %}

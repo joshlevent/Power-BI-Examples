@@ -3,19 +3,11 @@ title: Add Sunday Values to Monday
 description: Add Sunday's values to Monday's data
 layout: page
 parent: Examples
+grand_parent:
+has_toc: false
 ---
 
 # Add Sunday Values to Monday
-{: .no_toc }
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
 
 ## Description
 In this example, we have some values every day. We want to add the value of the previous Sunday to the value of Monday.
