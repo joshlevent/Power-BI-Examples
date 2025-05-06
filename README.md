@@ -1,3 +1,6 @@
+---
+---
+
 # Power BI Examples
 
 A collection of practical Power BI examples and solutions to common data analysis challenges.

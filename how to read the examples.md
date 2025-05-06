@@ -1,3 +1,5 @@
+---
+---
 ## DAX
 Notice that in DAX we are referencing other data with the syntax `Table[Column]`.
 
