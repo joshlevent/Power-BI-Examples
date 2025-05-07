@@ -17,7 +17,7 @@ or
 
 1. Copy and modify the DAX and/or Power Query code to fit your data
 
-[View Examples]({% link examples/index.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Examples](/Power-BI-Examples/examples/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ## How to use DAX code
 Notice that in DAX we are referencing other data with the syntax `Table[Column]`.
