@@ -59,8 +59,6 @@ exclude:
   - .gitignore
   - "*.pbix.temp"
   - "*.pbix.backup"
-  - _sass
-  - assets/css/main.scss
 
 # Collections
 collections:
