@@ -15,14 +15,6 @@ plugins:
 color_scheme: dark
 search_enabled: true
 heading_anchors: true
-aux_links:
-  "Power BI Examples on GitHub":
-    - "//github.com/joshlevent/Power-BI-Examples"
-aux_links_new_tab: true
-nav_external_links:
-  - title: Power BI Examples on GitHub
-    url: https://github.com/joshlevent/Power-BI-Examples
-    hide_icon: false
 
 # Enable or disable the site search
 # Supports true (default) or false

@@ -6,7 +6,7 @@ has_children: true
 layout: page
 ---
 
-# Power BI Examples
+## Examples
 
 {% assign example_dirs = site.pages | where_exp: "item", "item.path contains 'examples/'" | where_exp: "item", "item.path != 'examples/index.md'" | where_exp: "item", "item.name == 'index.md'" | sort: "title" %}
 {% if example_dirs.size > 0 %}
@@ -15,16 +15,13 @@ layout: page
   <div class="example-card">
     <h3><a href="{{ example.url | relative_url }}">{{ example.title }}</a></h3>
     <p>{{ example.description }}</p>
-    <a href="{{ example.url | relative_url }}" class="btn">View Example</a>
   </div>
   {% endfor %}
 </div>
 {% else %}
 <div class="examples-grid">
   <div class="example-card">
-    <h3><a href="/Add%20Sunday%20Values%20to%20Monday/">Add Sunday Values to Monday</a></h3>
-    <p>Add Sunday's values to Monday's data.</p>
-    <a href="/Add%20Sunday%20Values%20to%20Monday/" class="btn">View Example</a>
+    <h3>No Examples Found</h3>
   </div>
 </div>
 {% endif %}
