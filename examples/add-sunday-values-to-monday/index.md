@@ -35,7 +35,7 @@ or
 
 
 ## DAX Code for Adjusted Value
-```DAX
+```sql
 Adjusted Value DAX =
 VAR PrevDate    = Data[Date] - 1
 VAR PrevSunday  =
@@ -80,7 +80,6 @@ let
 in
     Result
 ```
-
 ## Power Query M Code for Generating Sample Data
 ```m
 let
