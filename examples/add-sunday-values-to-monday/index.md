@@ -117,4 +117,4 @@ in
 
 
 ## Screenshots
-![Visualisation](/examples/add-sunday-values-to-monday/visualisation.png)
+![Visualisation](visualisation.png)

@@ -1,8 +1,14 @@
-<script>
+<!-- Static search script - Just-the-Docs -->
+<script type="text/javascript" src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ '/assets/js/just-the-docs-search.js' | relative_url }}"></script>
+<script type="text/javascript">
   window.onload = function() {
-    // Initialize Just-the-Docs search explicitly
-    if (typeof window.jtd !== 'undefined' && typeof window.jtd.search !== 'undefined') {
-      window.jtd.search.init();
+    // Ensure Just-the-Docs search is initialized
+    if (typeof window.jtd !== 'undefined') {
+      console.log("JTD search module detected, initializing search...");
+      if (typeof window.jtd.search !== 'undefined') {
+        window.jtd.search.init();
+      }
     }
   }
 </script>
