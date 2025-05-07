@@ -5,7 +5,7 @@ url: "https://joshlevent.github.io"
 
 # Build settings
 markdown: kramdown
-remote_theme: just-the-docs/just-the-docs
+remote_theme: pmarsceill/just-the-docs@v0.3.3
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -14,11 +14,9 @@ plugins:
 # Theme settings
 color_scheme: dark
 heading_anchors: true
+search_enabled: true
 color_scheme_toggle: true
 enable_copy_code_button: true
-search_enabled: false
-search_placeholder_text: false
-aux_links_new_tab: true
 
 # Exclude from processing
 exclude:
