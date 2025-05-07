@@ -17,34 +17,21 @@ search_enabled: true
 heading_anchors: true
 
 # Enable or disable the site search
-# Supports true (default) or false
 search:
   # Split pages into sections that can be searched individually
-  # Supports 1 - 6, default: 2
   heading_level: 2
   # Maximum amount of previews per search result
-  # Default: 3
   previews: 3
   # Maximum amount of words to display before a matched word in the preview
-  # Default: 5
   preview_words_before: 5
   # Maximum amount of words to display after a matched word in the preview
-  # Default: 10
   preview_words_after: 10
   # Set the search token separator
-  # Default: /[\s\-/]+/
-  # Example: enable support for hyphenated search words
   tokenizer_separator: /[\s/]+/
   # Display the relative url in search results
-  # Supports true (default) or false
   rel_url: true
   # Enable or disable the search button that appears in the bottom right corner of every page
-  # Supports true or false (default)
   button: true
-  # Add these settings for better search functionality
-  search_full_content: true
-  search_include_headings: true
-  search_include_custom_excerpt: true
 
 # Exclude from processing
 exclude:
@@ -84,12 +71,11 @@ defaults:
       has_children: true
       has_toc: false
   - scope:
-      path: "LICENSE"
+      path: "license.md"
     values:
       layout: "page"
       title: "License"
-      nav_order: 3
-      has_toc: false
+      nav_order: 99
 
 # Site settings
 locale: "en-US"
