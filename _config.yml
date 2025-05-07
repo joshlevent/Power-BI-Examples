@@ -1,6 +1,6 @@
 title: Power BI Examples
 description: A collection of interesting Power BI examples with DAX and Power Query code
-baseurl: "/Power-BI-Examples"
+# baseurl: "/Power-BI-Examples" # Temporarily commented out for troubleshooting
 url: "https://joshlevent.github.io"
 
 # Build settings
