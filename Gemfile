@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
+gem "just-the-docs"
 gem "github-pages", group: :jekyll_plugins
 
-group :jekyll_plugins do
-  gem "jekyll-remote-theme"
-
-end
+# Webrick is for local development with Ruby 3+
+gem "webrick", "~> 1.8"
