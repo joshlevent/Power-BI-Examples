@@ -23,52 +23,18 @@ In general, this kind of operation is difficult because it requires moving infor
 
 In Power Query, we use an index column to be able to look up the previous row's value. In DAX, we instead use the date.
 
-## Power Query M Code
-```m
-let
-    StartDate = #date(2024, 1, 1),
-    EndDate   = #date(2025, 12, 31),
 
-    Dates = List.Dates( StartDate,
-                        Duration.Days( EndDate - StartDate ) + 1,
-                        #duration(1,0,0,0) ),
+## How to Use
+1. Download the [Power BI file](AddSundayValuesToMondayExample.pbix)
+2. Open the file in Power BI Desktop
+3. Modify the solution to fit your specific data structure
 
-    T0   = #table( type table [Date = date],
-                   List.Transform( Dates, each { _ } ) ),
+or
 
-    T1   = Table.AddColumn( T0, "Value",
-                            each Int64.From( Number.RandomBetween(0,20) ),
-                            Int64.Type ),
+1. Copy and modify the Power Query or DAX code below to fit your data (in this case you only need one or the other)
 
-    T2   = Table.AddColumn( T1, "Weekday",
-                            each Date.ToText( [Date], "dddd" ),
-                            type text ),
 
-    T3   = Table.AddIndexColumn( T2, "Idx", 0, 1, Int64.Type ),
-
-    Buf  = Table.Buffer( T3 ),
-
-    T4   = Table.AddColumn(
-             Buf, "Adjusted Value",
-             each let
-                     i   = [Idx],
-                     v   = [Value],
-                     wd  = [Weekday],
-                     pr  = if i > 0 then Buf{i-1} else null,
-                     adj = if      wd = "Sunday"                  then 0
-                           else if wd = "Monday"
-                                   and pr <> null
-                                   and pr[Weekday] = "Sunday"     then v + pr[Value]
-                           else                                   v
-                  in  adj,
-             Int64.Type ),
-
-    Result = Table.RemoveColumns( T4, {"Idx"} )
-in
-    Result
-```
-
-## DAX Code
+## DAX Code for Adjusted Value
 ```DAX
 Adjusted Value DAX =
 VAR PrevDate    = Data[Date] - 1
@@ -87,21 +53,68 @@ SWITCH (
 )
 ```
 
-## How to Use
-1. Download the [Power BI file](AddSundayValuesToMondayExample.pbix)
-2. Open the file in Power BI Desktop
-3. Review the calculated columns and measures in the data model
-4. Modify the solution to fit your specific data structure
+## Power Query M Code for Adjusted Value
+```m
+let
+    Source = SampleData,
+    T2 = Table.AddColumn(Source, "Weekday", each Date.ToText([Date], "dddd"), type text),
+    T3 = Table.AddIndexColumn(T2, "Idx", 0, 1, Int64.Type),
+    Buf = Table.Buffer(T3),
 
-## Key Components
-- Date table with day of week information
-- Calculated column for date adjustment
-- Measures for aggregating the adjusted values
+    T4 = Table.AddColumn(
+            Buf, "Adjusted Value",
+            each let
+                    i   = [Idx],
+                    v   = [Value],
+                    wd  = [Weekday],
+                    pr  = if i > 0 then Buf{i-1} else null,
+                    adj = if      wd = "Sunday"                                   then 0
+                          else if wd = "Monday" and pr <> null and pr[Weekday] = "Sunday"
+                               then v + pr[Value]
+                               else v
+                 in adj,
+            Int64.Type
+         ),
+
+    Result = Table.RemoveColumns(T4, {"Idx"})
+in
+    Result
+```
+
+## Power Query M Code for Generating Sample Data
+```m
+let
+    StartDate = #date(2024, 1, 1),
+    EndDate   = #date(2025, 12, 31),
+
+    Dates = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1,0,0,0)),
+
+    Base   = 150,
+    AmpW   = 20,
+    AmpM   = 15,
+    AmpY   = 30,
+
+    T0 = #table(type table [Date = date], List.Transform(Dates, each { _ })),
+
+    T1 = Table.AddColumn(
+            T0, "Value",
+            each let
+                    d   = [Date],
+                    dow = Date.DayOfWeek(d, Day.Tuesday),           // 0‑6
+                    dom = Date.Day(d) - 1,                         // 0‑30
+                    doy = Date.DayOfYear(d) - 1,                   // 0‑364/365
+                    w   = AmpW * Number.Sin( 2 * Number.PI * dow / 7 ),
+                    m   = AmpM * Number.Sin( 2 * Number.PI * dom / 31 ),
+                    y   = AmpY * Number.Sin( 2 * Number.PI * doy / 365 ),
+                    j   = Number.RandomBetween(-20, 20),     // ±20
+                    raw = Base + w + m + y + j
+                 in Int64.From( Number.Round( raw, 0 ) ),
+            Int64.Type
+         )
+in
+    T1
+```
+
 
 ## Screenshots
-<!-- Add screenshots here -->
-<!-- Example:
-![Date Table Structure](/assets/img/add-sunday-values/date-table.png)
-![Calculated Column](/assets/img/add-sunday-values/calculated-column.png)
-![Final Result](/assets/img/add-sunday-values/result.png)
--->
+![Visualisation](/examples/add-sunday-values-to-monday/visualisation.png)

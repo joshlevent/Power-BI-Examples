@@ -1,5 +1,5 @@
 title: Power BI Examples
-description: A collection of practical Power BI examples and solutions to common data analysis challenges
+description: A collection of interesting Power BI examples with DAX and Power Query code
 baseurl: "/Power-BI-Examples"
 url: "https://joshlevent.github.io"
 
@@ -41,6 +41,10 @@ search:
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
   button: true
+  # Add these settings for better search functionality
+  search_full_content: true
+  search_include_headings: true
+  search_include_custom_excerpt: true
 
 # Exclude from processing
 exclude:
@@ -78,6 +82,13 @@ defaults:
       title: "Examples"
       nav_order: 2
       has_children: true
+      has_toc: false
+  - scope:
+      path: "LICENSE"
+    values:
+      layout: "page"
+      title: "License"
+      nav_order: 3
       has_toc: false
 
 # Site settings
