@@ -75,7 +75,6 @@ defaults:
     values:
       layout: "page"
       title: "License"
-      nav_order: 99
 
 # Site settings
 locale: "en-US"
