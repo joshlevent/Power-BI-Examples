@@ -31,7 +31,7 @@ There is a `List.ContainsAny` function which almost does what we want. We would 
 
 Here is the code:
 
-```powerquery
+```m
 Table.SelectRows(TableName, (Row) => List.MatchesAny(SubstringList, (Substring) => Text.Contains(Row[ColumnToBeFiltered], Substring)))
 ```
 
@@ -56,7 +56,7 @@ In the documentation both `Table.SelectRows` and `List.MatchesAny` use the "each
 
 ## Code to generate sample data
 
-```powerquery
+```m
 let
     Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("NYy5EcAwCAR7uVgJAsnFMAS2HvrvwMiMw917VEEouJ8x13aqLK1fsKKoqUN9yAenk2QqgTH4y+2kYzlxS9FDxGf8wewF", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t, ColumnToBeFiltered = _t]),
     Types = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}, {"ColumnToBeFiltered", type text}})
@@ -65,7 +65,7 @@ in
 ```
 
 ## Substring List
-```powerquery
+```m
 = {"123", "567", "135"}
 ```
 
