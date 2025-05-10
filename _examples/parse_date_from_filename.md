@@ -21,7 +21,6 @@ To analyse the series correctly we must derive the reporting period from the fil
 
 ### Sample query that lists the workbooks
 
----
 
 ## 1 Sample data query (optional)
 
@@ -80,7 +79,6 @@ in
 
 Result: a table **SampleFiles** with columns **filename** (text) and **data** (nested table).
 
----
 
 ## 2 Reusable transformation query
 
