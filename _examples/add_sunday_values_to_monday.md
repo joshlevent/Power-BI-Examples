@@ -22,7 +22,7 @@ In Power Query, we use an index column to be able to look up the previous row's 
 
 
 ## How to Use
-1. Download the [Power BI file](AddSundayValuesToMondayExample.pbix)
+1. Download the [Power BI file](add_sunday_values_to_monday.pbix)
 2. Open the file in Power BI Desktop
 3. Modify the solution to fit your specific data structure
 
@@ -113,4 +113,4 @@ in
 
 
 ## Screenshots
-![Visualisation](add_sunday_values_to_monday.png)
+![Visualisation](visualisation.png)
