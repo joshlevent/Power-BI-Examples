@@ -1,5 +1,3 @@
-
-
 ---
 title: Parse Date from Filename
 description: Extract Year and Month from Filename
