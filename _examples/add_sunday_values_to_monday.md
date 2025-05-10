@@ -2,9 +2,6 @@
 title: Add Sunday Values to Monday
 description: Add Sunday's values to Monday's data
 layout: page
-parent: Examples
-grand_parent:
-has_toc: false
 ---
 
 # Add Sunday Values to Monday
@@ -116,4 +113,4 @@ in
 
 
 ## Screenshots
-![Visualisation](visualisation.png)
+![Visualisation](add_sunday_values_to_monday.png)
