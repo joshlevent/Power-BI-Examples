@@ -8,6 +8,12 @@ layout: page
 
 I first posted this example to the Power BI Community in response to a question: [Power BI Community Post](https://community.fabric.microsoft.com/t5/Desktop/quot-Text-Contains-quot-Filter-with-List-as-Argument/m-p/3272505#M1096509)
 
+## What's the purpose of this?
+
+You want to filter a table based on whether the text in a column contains any of the values in a list. Matching to a single value is easy, but matching to a list of values is not straightforward.
+
+For example, let's say you have a list of products to watch, but this list does not contain the full product name, only a part of it (perhaps in order to match multiple similar products, like "Pulse Hammer", "Sledge Hammer", "Rubber Mallet", "Large Rubber Mallet", etc. Our filter list would contain "Hammer" and "Mallet").
+
 ## Example
 
 You have a table:

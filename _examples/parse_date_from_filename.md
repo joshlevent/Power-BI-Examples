@@ -4,9 +4,13 @@ description: Extract Year and Month from Filename
 layout: page
 ---
 
-# Extract Year and Month from Filename
+# Extract Year and Month from Filename
 
-## Example
+## What's the purpose of this?
+
+You want to extract the year and month from a filename.
+
+## Example
 
 You receive monthly ERP reports named like
 
@@ -16,13 +20,11 @@ monthly_revenue_cost_report_TpMwa_2024_06.xlsx
 …
 ```
 
-Each workbook contains a table of daily values for every business unit, but the sheet itself has no date column.
+Each workbook contains a table of values for every team in each business unit, but the sheet itself has no date column.
 To analyse the series correctly we must derive the reporting period from the file name.
 
-### Sample query that lists the workbooks
 
-
-## 1 Sample data query (optional)
+## 1 Generate the sample data (optional)
 
 ```m
 let
@@ -80,7 +82,7 @@ in
 Result: a table **SampleFiles** with columns **filename** (text) and **data** (nested table).
 
 
-## 2 Reusable transformation query
+## 2 Create a reusable transformation query to extract the date from the filename
 
 ```m
 AddReportingPeriod = (tbl as table) as table =>
@@ -102,7 +104,7 @@ AddReportingPeriod = (tbl as table) as table =>
             addMonth
 ```
 
-### Usage
+### 3 Apply the transformation to your data
 
 ```m
 let
@@ -119,18 +121,19 @@ The resulting table contains:
 
 ready for expansion and modelling in Power BI.
 
-## How it Works
-	1.	Text.End grabs the last 12 characters (yyyy_mm.xlsx).
-	2.	Text.Start isolates the first 4 characters → year.
-	3.	Text.Middle takes characters 5‑6 → month.
-	4.	#date builds the first day of that month.
-	5.	Table.AddColumn appends report_date (type date) to each row.
+
+## How it works
+1.	Text.End grabs the last 12 characters (yyyy_mm.xlsx).
+2.	Text.Start isolates the first 4 characters → year.
+3.	Text.Middle takes characters 5‑6 → month.
+4.	#date builds the first day of that month.
+5.	Table.AddColumn appends report_date (type date) to each row.
 
 With the period now explicit you can:
 
-* Expand the data tables
-* Use report_date in your model’s calendar relationships
-* Slice monthly KPIs without ambiguity
+* Expand the data tables
+* Use report_date in your model’s calendar relationships
+* Slice monthly KPIs without ambiguity
 
 
 ## Power BI Desktop File
