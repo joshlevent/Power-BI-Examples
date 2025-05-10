@@ -104,7 +104,7 @@ AddReportingPeriod = (tbl as table) as table =>
             addMonth
 ```
 
-### 3 Apply the transformation to your data
+## 3 Apply the transformation to your data
 
 ```m
 let
